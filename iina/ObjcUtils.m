@@ -78,21 +78,23 @@ static inline int min(int a, int b, int c) {
 }
 
 + (NSImage *)getImageFrom:(mpv_node *)image {
-  uint64_t width = image->u.list->values[0].u.int64;
-  uint64_t height = image->u.list->values[1].u.int64;
+  mpv_node *list = image->u.list->values;
+  uint64_t width = list[0].u.int64;
+  uint64_t height = list[1].u.int64;
   uint64_t pixels = width * height;
-  uint8_t *pixel_array = image->u.list->values[4].u.ba->data;
+  uint8_t *pixel_array = list[4].u.ba->data;
   int i;
   // The pixel array mpv returns arrange color data as "B8G8R8X8",
   // whereas CGImages's data provider needs RGBA, so swap each
   // pixel at index 0 and 2.
   for (i = 0; i < pixels; ++i) {
-    uint8_t t = pixel_array[i << 2];
-    pixel_array[i << 2] = pixel_array[i << 2 | 2];
-    pixel_array[i << 2 | 2] = t;
+    uint64_t x = i << 2, y = i << 2 | 2;
+    uint8_t t = pixel_array[x];
+    pixel_array[x] = pixel_array[y];
+    pixel_array[y] = t;
   }
   CGDataProviderRef ref = CGDataProviderCreateWithData(nil, pixel_array,
-                                                       image->u.list->values[4].u.ba->size, nil);
+                                                       list[4].u.ba->size, nil);
   CGImageRef cgImage = CGImageCreate(width, height, 8, 4 * 8, width * 4,
                                      CGColorSpaceCreateDeviceRGB(),
                                      (CGBitmapInfo)kCGImageAlphaPremultipliedLast,
