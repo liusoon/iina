@@ -1898,9 +1898,9 @@ class MainWindowController: PlayerWindowController {
       let previewTime = duration * percentage
       timePreviewWhenSeek.stringValue = previewTime.stringRepresentation
 
-      if player.info.thumbnailsReady, let tb = player.info.getThumbnail(forSecond: previewTime.second) {
+      if player.info.thumbnailsReady, let image = player.info.getThumbnail(forSecond: previewTime.second)?.image {
+        thumbnailPeekView.imageView.image = image.rotate(player.mpv.getInt(MPVProperty.videoParamsRotate))
         thumbnailPeekView.isHidden = false
-        thumbnailPeekView.imageView.image = tb.image
         let height = round(120 / thumbnailPeekView.imageView.image!.size.aspect)
         let yPos = (oscPosition == .top || (oscPosition == .floating && sliderFrameInWindow.y + 52 + height >= window!.frame.height)) ?
           sliderFrameInWindow.y - height : sliderFrameInWindow.y + 32
