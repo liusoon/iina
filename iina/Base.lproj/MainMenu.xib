@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="14460.30.1" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="16097" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14460.30.1"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="16097"/>
     </dependencies>
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="NSApplication">
@@ -547,6 +547,10 @@ CA
                             <menuItem title="Find Online Subtitles…" id="Mg3-WB-gjZ">
                                 <modifierMask key="keyEquivalentModifierMask"/>
                             </menuItem>
+                            <menuItem title="Find Online Subtitles from" id="5dT-kq-WV9">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <menu key="submenu" title="Find Online Subtitles from" id="i0H-bE-bH8"/>
+                            </menuItem>
                             <menuItem title="Save Downloaded Subtitle" id="9zk-co-roT">
                                 <modifierMask key="keyEquivalentModifierMask"/>
                             </menuItem>
@@ -661,6 +665,7 @@ CA
                     </menu>
                 </menuItem>
             </items>
+            <point key="canvasLocation" x="141" y="154"/>
         </menu>
         <customObject id="cyK-tE-xgA" customClass="MenuController" customModule="IINA" customModuleProvider="target">
             <connections>
@@ -726,6 +731,7 @@ CA
                 <outlet property="nextMedia" destination="GR6-4V-lRT" id="6sO-cD-UeT"/>
                 <outlet property="normalSize" destination="1UK-8n-QPP" id="rpd-7S-IYd"/>
                 <outlet property="normalSizeRetina" destination="c1x-bx-69F" id="S22-F3-Ks9"/>
+                <outlet property="onlineSubSourceMenu" destination="i0H-bE-bH8" id="u9W-1Y-Jhk"/>
                 <outlet property="open" destination="IAo-SY-fd9" id="fW9-2A-V4F"/>
                 <outlet property="openAlternative" destination="z9W-ga-j3b" id="RRI-7o-x9o"/>
                 <outlet property="openURL" destination="0m7-3r-twH" id="BOj-Zv-hzW"/>
