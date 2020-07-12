@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="16096" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="16097" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="16096"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="16097"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -244,7 +244,7 @@
                 <tokenField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="bhV-Cx-zgK" customClass="LanguageTokenField" customModule="IINA" customModuleProvider="target">
                     <rect key="frame" x="248" y="64" width="298" height="20"/>
                     <tokenFieldCell key="cell" selectable="YES" editable="YES" borderStyle="bezel" alignment="left" drawsBackground="YES" allowsEditingTextAttributes="YES" id="MPJ-dp-jsH">
-                        <font key="font" metaFont="label" size="12"/>
+                        <font key="font" metaFont="controlContent"/>
                         <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                         <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                     </tokenFieldCell>
@@ -315,7 +315,7 @@
                             <rect key="frame" x="0.0" y="60" width="426" height="21"/>
                             <subviews>
                                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="p4E-J3-eff">
-                                    <rect key="frame" x="-2" y="3" width="155" height="16"/>
+                                    <rect key="frame" x="-2" y="4" width="155" height="16"/>
                                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Download subtitles from:" id="TPK-CJ-HX7">
                                         <font key="font" metaFont="system"/>
                                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -328,20 +328,14 @@
                                         <constraint firstAttribute="height" constant="21" id="6er-PT-s9c"/>
                                         <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="160" id="jeq-2f-ivK"/>
                                     </constraints>
-                                    <popUpButtonCell key="cell" type="push" title="Shooter.cn" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="7YD-rw-eCZ" id="XkP-fD-qDc">
+                                    <popUpButtonCell key="cell" type="push" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" id="XkP-fD-qDc">
                                         <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
                                         <font key="font" metaFont="system"/>
-                                        <menu key="menu" id="fNm-dm-q55">
-                                            <items>
-                                                <menuItem title="Shooter.cn" state="on" id="7YD-rw-eCZ"/>
-                                                <menuItem title="OpenSubtitles.org" tag="1" id="39k-VH-tOz"/>
-                                                <menuItem title="Assrt.net" tag="2" id="lQt-Cg-6Zd"/>
-                                            </items>
-                                        </menu>
+                                        <menu key="menu" id="fNm-dm-q55"/>
                                     </popUpButtonCell>
                                     <connections>
                                         <action selector="onlineSubSourceAction:" target="-2" id="MCn-TQ-TEj"/>
-                                        <binding destination="5Up-Ab-aAm" name="selectedTag" keyPath="values.onlineSubSource" id="4Lq-8P-qhN"/>
+                                        <binding destination="5Up-Ab-aAm" name="selectedObject" keyPath="values.onlineSubProvider" id="UPw-5l-t21"/>
                                     </connections>
                                 </popUpButton>
                             </subviews>
@@ -400,7 +394,7 @@
                                     <rect key="frame" x="255" y="0.0" width="45" height="19"/>
                                     <buttonCell key="cell" type="roundRect" title="Login" bezelStyle="roundedRect" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="WHk-sk-gmK">
                                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                        <font key="font" metaFont="label" size="12"/>
+                                        <font key="font" metaFont="controlContent"/>
                                     </buttonCell>
                                     <connections>
                                         <action selector="openSubLoginAction:" target="-2" id="Ltg-N7-kwi"/>

@@ -82,6 +82,7 @@ struct Constants {
     static let pip = NSLocalizedString("menu.pip", comment: "Enter Picture-in-Picture")
     static let exitPIP = NSLocalizedString("menu.exit_pip", comment: "Exit Picture-in-Picture")
     static let custom = NSLocalizedString("menu.crop_custom", comment: "Custom crop size")
+    static let findOnlineSubtitles = NSLocalizedString("menu.find_online_sub", comment: "Find Online Subtitles")
   }
   struct Time {
     static let infinite = VideoTime(999, 0, 0)
@@ -110,4 +111,5 @@ extension Notification.Name {
   static let iinaHistoryUpdated = Notification.Name("IINAHistoryUpdated")
   static let iinaLegacyFullScreen = Notification.Name("IINALegacyFullScreen")
   static let iinaKeyBindingChanged = Notification.Name("iinaKeyBindingChanged")
+  static let iinaPluginChanged = Notification.Name("IINAPluginChanged")
 }
